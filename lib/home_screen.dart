@@ -48,42 +48,56 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Container(
                 width: double.infinity,
-                color: Colors.blue[900], // Fondo azul oscuro
+                color: Color.fromARGB(255, 34, 38, 63), // Fondo azul oscuro
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue[700], // Azul rey oscuro
-                        foregroundColor: Colors.white, // Color del texto
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10), // Bordes redondeados
+                    SizedBox(
+                      width: 200, // Ancho de los botones
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 15), // Padding vertical
+                          backgroundColor: Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
+                          foregroundColor: Colors.white, // Color del texto
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(10), // Bordes redondeados
+                          ),
                         ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignInPage()),
+                          );
+                        },
+                        child: Text('Iniciar Sesión'),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignInPage()),
-                        );
-                      },
-                      child: Text('Iniciar Sesión'),
                     ),
                     SizedBox(height: 10),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue[900], // Azul rey oscuro
-                        foregroundColor: Colors.white, // Color del texto
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10), // Bordes redondeados
+                    SizedBox(
+                      width: 200, // Ancho de los botones
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 15), // Padding vertical
+                          backgroundColor: Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
+                          foregroundColor: Colors.white, // Color del texto
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(10), // Bordes redondeados
+                          ),
                         ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignUpPage()),
+                          );
+                        },
+                        child: Text('Registrarse'),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignUpPage()),
-                        );
-                      },
-                      child: Text('Registrarse'),
                     ),
                   ],
                 ),
