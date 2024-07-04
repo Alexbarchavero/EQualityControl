@@ -4,6 +4,7 @@ import 'sign_in_page.dart';
 import 'sign_up_page.dart';
 import 'dashboard_page.dart';
 import 'quality_check_page.dart';
+import 'statistic_analysis_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,11 +19,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
           displayLarge: TextStyle(
-              fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.black),
+            fontSize: 32.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
           headlineSmall: TextStyle(
-              fontSize: 24.0, fontStyle: FontStyle.italic, color: Colors.black),
+            fontSize: 24.0,
+            fontStyle: FontStyle.italic,
+            color: Colors.black,
+          ),
           bodyMedium: TextStyle(
-              fontSize: 14.0, fontFamily: 'Hind', color: Colors.black),
+            fontSize: 14.0,
+            fontFamily: 'Hind',
+            color: Colors.black,
+          ),
         ),
       ),
       initialRoute: '/',
@@ -32,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/signUp': (context) => SignUpPage(),
         '/dashboard': (context) => DashboardPage(),
         '/qualityCheck': (context) => QualityCheckPage(),
+        '/statisticAnalysis': (context) => StatisticAnalysisPage(),
       },
     );
   }

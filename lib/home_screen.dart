@@ -58,7 +58,8 @@ class HomeScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
                               vertical: 15), // Padding vertical
-                          backgroundColor: Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
+                          backgroundColor:
+                              Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
                           foregroundColor: Colors.white, // Color del texto
                           shape: RoundedRectangleBorder(
                             borderRadius:
@@ -68,8 +69,7 @@ class HomeScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => SignInPage()),
+                            MaterialPageRoute(builder: (context) => SignInPage()),
                           );
                         },
                         child: Text('Iniciar Sesión'),
@@ -82,7 +82,8 @@ class HomeScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
                               vertical: 15), // Padding vertical
-                          backgroundColor: Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
+                          backgroundColor:
+                              Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
                           foregroundColor: Colors.white, // Color del texto
                           shape: RoundedRectangleBorder(
                             borderRadius:
@@ -92,8 +93,7 @@ class HomeScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => SignUpPage()),
+                            MaterialPageRoute(builder: (context) => SignUpPage()),
                           );
                         },
                         child: Text('Registrarse'),

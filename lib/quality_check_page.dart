@@ -5,46 +5,7 @@ class QualityCheckPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quality Check'),
-        backgroundColor: Color(0xFF6A1B9A), // Color del encabezado
-        actions: [
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: () {
-              Navigator.pushNamed(context, '/dashboard');
-            },
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text(
-                'Menú',
-                style: TextStyle(color: Colors.white, fontSize: 24),
-              ),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.check),
-              title: Text('Quality Check'),
-              onTap: () {
-                Navigator.pushNamed(context, '/qualityCheck');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.bar_chart),
-              title: Text('Statistic Analysis'),
-              //onTap: () {
-                //Navigator.pushNamed(context, '/statisticAnalysis');
-              //},
-            ),
-          ],
-        ),
+        title: Text('Control de Calidad'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -53,16 +14,16 @@ class QualityCheckPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                'QUALITY CHECK',
+                'CONTROL DE CALIDAD',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF6A1B9A), // Color del texto
+                  color: Colors.blue,
                 ),
               ),
               SizedBox(height: 10),
               Text(
-                'Utiliza tu camara para hacer un escaneo de calidad comparando el componente',
+                'Utiliza tu cámara para hacer un escaneo de calidad comparando el componente',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
@@ -120,6 +81,40 @@ class QualityCheckPage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            label: 'Dashboard',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.check),
+            label: 'Control de Calidad',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bar_chart),
+            label: 'Análisis Estadístico',
+          ),
+        ],
+        currentIndex: 1, // Índice para el item seleccionado actualmente
+        selectedItemColor: Colors.blueAccent,
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              // Dashboard
+              Navigator.pushNamed(context, '/dashboard');
+              break;
+            case 1:
+              // Control de Calidad
+              Navigator.pushNamed(context, '/qualityCheck');
+              break;
+            case 2:
+              // Análisis Estadístico
+              Navigator.pushNamed(context, '/statisticAnalysis');
+              break;
+          }
+        },
       ),
     );
   }
