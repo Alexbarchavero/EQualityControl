@@ -52,52 +52,24 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                      width: 200, // Ancho de los botones
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 15), // Padding vertical
-                          backgroundColor:
-                              Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
-                          foregroundColor: Colors.white, // Color del texto
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(10), // Bordes redondeados
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignInPage()),
-                          );
-                        },
-                        child: Text('Iniciar Sesión'),
-                      ),
+                    CustomButton(
+                      text: 'Iniciar Sesión',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignInPage()),
+                        );
+                      },
                     ),
                     SizedBox(height: 10),
-                    SizedBox(
-                      width: 200, // Ancho de los botones
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 15), // Padding vertical
-                          backgroundColor:
-                              Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
-                          foregroundColor: Colors.white, // Color del texto
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(10), // Bordes redondeados
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignUpPage()),
-                          );
-                        },
-                        child: Text('Registrarse'),
-                      ),
+                    CustomButton(
+                      text: 'Registrarse',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUpPage()),
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -105,6 +77,32 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+
+  CustomButton({required this.text, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 200, // Ancho de los botones
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(vertical: 15), // Padding vertical
+          backgroundColor: Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
+          foregroundColor: Colors.white, // Color del texto
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10), // Bordes redondeados
+          ),
+        ),
+        onPressed: onPressed,
+        child: Text(text),
       ),
     );
   }

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class QualityCheckPage extends StatelessWidget {
+class QualityReportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Control de Calidad'),
+        title: Text('Reportes de Calidad'),
         backgroundColor: Color(0xFF6A1B9A),
       ),
       body: Center(
         child: Text(
-          'Página de Control de Calidad',
-          style: TextStyle(fontSize: 24),
+          'Página de Reportes de Calidad',
+          style: TextStyle(fontSize: 24, color: Colors.white),
         ),
       ),
     );

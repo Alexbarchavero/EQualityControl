@@ -1,53 +1,104 @@
 import 'package:flutter/material.dart';
-import 'quality_check_page.dart';
-import 'statistic_analysis_page.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('E-Quality Control'),
+        title: Text('Dashboard'),
+        backgroundColor: Color(0xFF6A1B9A),
       ),
-      body: Center(
-        child: Text(
-          'Bienvenido al Dashboard',
-          style: TextStyle(fontSize: 24),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 16.0,
+          mainAxisSpacing: 16.0,
+          children: [
+            DashboardButton(
+              icon: Icons.assignment,
+              label: 'Entrada de Materiales',
+              onTap: () {
+                Navigator.pushNamed(context, '/materialEntry');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.build,
+              label: 'Monitoreo de Herramientas',
+              onTap: () {
+                Navigator.pushNamed(context, '/toolMonitoring');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.precision_manufacturing,
+              label: 'Monitoreo de Maquinarias',
+              onTap: () {
+                Navigator.pushNamed(context, '/machineMonitoring');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.notifications,
+              label: 'Alertas en Tiempo Real',
+              onTap: () {
+                Navigator.pushNamed(context, '/realTimeAlerts');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.warning,
+              label: 'Alertas de Calidad',
+              onTap: () {
+                Navigator.pushNamed(context, '/qualityAlerts');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.report,
+              label: 'Reportes de Calidad',
+              onTap: () {
+                Navigator.pushNamed(context, '/qualityReport');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.analytics,
+              label: 'Análisis Estadístico',
+              onTap: () {
+                Navigator.pushNamed(context, '/statisticAnalysis');
+              },
+            ),
+          ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.check),
-            label: 'Control de Calidad',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bar_chart),
-            label: 'Análisis Estadístico',
-          ),
-        ],
-        currentIndex: 0, // Indice inicial del item seleccionado
-        selectedItemColor: Colors.blueAccent,
-        onTap: (int index) {
-          switch (index) {
-            case 0:
-              // Dashboard
-              Navigator.pushNamed(context, '/dashboard');
-              break;
-            case 1:
-              // Control de Calidad
-              Navigator.pushNamed(context, '/qualityCheck');
-              break;
-            case 2:
-              // Análisis Estadístico
-              Navigator.pushNamed(context, '/statisticAnalysis');
-              break;
-          }
-        },
+    );
+  }
+}
+
+class DashboardButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  DashboardButton({required this.icon, required this.label, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color(0xFF2C2E43),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 50, color: Colors.white),
+            SizedBox(height: 10),
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }
