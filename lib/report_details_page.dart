@@ -10,20 +10,37 @@ class ReportDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalles del Reporte'),
+        title: Text('Report Details'),
         backgroundColor: Color(0xFF6A1B9A),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Reporte: $reportName', style: TextStyle(fontSize: 18, color: Colors.white)),
+          children: <Widget>[
+            Text(
+              'Report Name: $reportName',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             SizedBox(height: 10),
-            Text('Fecha: $date', style: TextStyle(fontSize: 18, color: Colors.white)),
+            Text(
+              'Date: $date',
+              style: TextStyle(fontSize: 16),
+            ),
             SizedBox(height: 20),
-            Text('Contenido del reporte aquí...', style: TextStyle(fontSize: 16, color: Colors.white)),
-            // Otros detalles y contenido del reporte
+            Text(
+              'Details:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Text(
+                  'Here go the details of the report...',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+            ),
           ],
         ),
       ),

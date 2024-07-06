@@ -17,51 +17,72 @@ class DashboardPage extends StatelessWidget {
           children: [
             DashboardButton(
               icon: Icons.assignment,
-              label: 'Entrada de Materiales',
+              label: 'Quality Check',
+              onTap: () {
+                Navigator.pushNamed(context, '/qualityCheck');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.analytics,
+              label: 'Statistical Analysis',
+              onTap: () {
+                Navigator.pushNamed(context, '/statisticAnalysis');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.assignment,
+              label: 'Material Entry',
               onTap: () {
                 Navigator.pushNamed(context, '/materialEntry');
               },
             ),
             DashboardButton(
               icon: Icons.build,
-              label: 'Monitoreo de Herramientas',
+              label: 'Tool Monitoring',
               onTap: () {
                 Navigator.pushNamed(context, '/toolMonitoring');
               },
             ),
             DashboardButton(
               icon: Icons.precision_manufacturing,
-              label: 'Monitoreo de Maquinarias',
+              label: 'Machine Monitoring',
               onTap: () {
                 Navigator.pushNamed(context, '/machineMonitoring');
               },
             ),
             DashboardButton(
               icon: Icons.notifications,
-              label: 'Alertas en Tiempo Real',
+              label: 'Real-Time Alerts',
               onTap: () {
                 Navigator.pushNamed(context, '/realTimeAlerts');
               },
             ),
             DashboardButton(
               icon: Icons.warning,
-              label: 'Alertas de Calidad',
+              label: 'Quality Alerts',
               onTap: () {
                 Navigator.pushNamed(context, '/qualityAlerts');
               },
             ),
             DashboardButton(
               icon: Icons.report,
-              label: 'Reportes de Calidad',
+              label: 'Quality Reports',
               onTap: () {
                 Navigator.pushNamed(context, '/qualityReport');
               },
             ),
             DashboardButton(
-              icon: Icons.analytics,
-              label: 'Análisis Estadístico',
+              icon: Icons.description,
+              label: 'Material Details',
               onTap: () {
-                Navigator.pushNamed(context, '/statisticAnalysis');
+                Navigator.pushNamed(context, '/materialDetails');
+              },
+            ),
+            DashboardButton(
+              icon: Icons.description,
+              label: 'Report Details',
+              onTap: () {
+                Navigator.pushNamed(context, '/reportDetails');
               },
             ),
           ],

@@ -13,6 +13,7 @@ import 'real_time_alerts_page.dart';
 import 'quality_alerts_page.dart';
 import 'quality_report_page.dart';
 import 'report_details_page.dart';
+import 'forgot_password_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,10 +47,12 @@ class MyApp extends StatelessWidget {
         '/qualityAlerts': (context) => QualityAlertsPage(),
         '/qualityReport': (context) => QualityReportPage(),
         '/reportDetails': (context) => ReportDetailsPage(reportName: 'Reporte', date: 'Fecha'),
+        '/forgotPassword': (context) => ForgotPasswordPage(),
       },
     );
   }
 }
+
 
 // No borrar lo siguiente. Datos importantes
 // tempuser@example.com

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
 
-class SignUpPage extends StatelessWidget {
-  final TextEditingController nameController = TextEditingController();
+class ForgotPasswordPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -26,11 +23,7 @@ class SignUpPage extends StatelessWidget {
               child: Center(
                 child: TextButton.icon(
                   onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
-                      (Route<dynamic> route) => false,
-                    );
+                    Navigator.pop(context);
                   },
                   icon: Icon(Icons.arrow_back, color: Colors.white),
                   label: Text(
@@ -56,7 +49,7 @@ class SignUpPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Create a New Account',
+                    'Forgot Password',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -65,7 +58,7 @@ class SignUpPage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'Already registered? Sign in.',
+                    'Enter your email to reset your password.',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -77,17 +70,6 @@ class SignUpPage extends StatelessWidget {
                     child: Column(
                       children: [
                         CustomTextField(
-                          controller: nameController,
-                          label: 'Name',
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your name';
-                            }
-                            return null;
-                          },
-                        ),
-                        SizedBox(height: 20),
-                        CustomTextField(
                           controller: emailController,
                           label: 'Email',
                           keyboardType: TextInputType.emailAddress,
@@ -98,25 +80,13 @@ class SignUpPage extends StatelessWidget {
                             return null;
                           },
                         ),
-                        SizedBox(height: 20),
-                        CustomTextField(
-                          controller: passwordController,
-                          label: 'Password',
-                          obscureText: true,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your password';
-                            }
-                            return null;
-                          },
-                        ),
                         SizedBox(height: 30),
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
                               if (_formKey.currentState?.validate() == true) {
-                                // Implement registration logic
+                                // Action to reset password
                               }
                             },
                             style: ElevatedButton.styleFrom(
@@ -126,19 +96,10 @@ class SignUpPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child: Text('Sign Up', style: TextStyle(fontSize: 18, color: Colors.white)),
+                            child: Text('Reset Password', style: TextStyle(fontSize: 18, color: Colors.white)),
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/signIn');
-                    },
-                    child: Text(
-                      'Already have an account? Sign In!',
-                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],

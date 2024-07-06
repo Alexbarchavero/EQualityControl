@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              color: Colors.white, // Fondo blanco
+              color: Colors.white, // White background
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -23,15 +23,15 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF6A1B9A), // Morado oscuro
+                        color: Color(0xFF6A1B9A), // Dark purple
                       ),
                     ),
                     SizedBox(height: 5),
                     Text(
-                      'Mejorando los procesos de calidad.',
+                      'Improving quality processes.',
                       style: TextStyle(
                         fontSize: 16,
-                        color: Color(0xFF6A1B9A), // Morado oscuro
+                        color: Color(0xFF6A1B9A), // Dark purple
                       ),
                     ),
                   ],
@@ -48,12 +48,12 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Container(
                 width: double.infinity,
-                color: Color.fromARGB(255, 34, 38, 63), // Fondo azul oscuro
+                color: Color.fromARGB(255, 34, 38, 63), // Dark blue background
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CustomButton(
-                      text: 'Iniciar Sesión',
+                      text: 'Sign In',
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -63,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     CustomButton(
-                      text: 'Registrarse',
+                      text: 'Sign Up',
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -91,14 +91,14 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200, // Ancho de los botones
+      width: 200, // Button width
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: 15), // Padding vertical
-          backgroundColor: Color.fromARGB(255, 73, 66, 206), // Azul rey oscuro
-          foregroundColor: Colors.white, // Color del texto
+          padding: EdgeInsets.symmetric(vertical: 15), // Vertical padding
+          backgroundColor: Color.fromARGB(255, 73, 66, 206), // Dark royal blue
+          foregroundColor: Colors.white, // Text color
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10), // Bordes redondeados
+            borderRadius: BorderRadius.circular(10), // Rounded corners
           ),
         ),
         onPressed: onPressed,

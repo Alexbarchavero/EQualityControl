@@ -5,14 +5,34 @@ class QualityReportPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Reportes de Calidad'),
+        title: Text('Quality Report'),
         backgroundColor: Color(0xFF6A1B9A),
       ),
-      body: Center(
-        child: Text(
-          'Página de Reportes de Calidad',
-          style: TextStyle(fontSize: 24, color: Colors.white),
-        ),
+      body: ListView(
+        padding: EdgeInsets.all(16.0),
+        children: [
+          Card(
+            child: ListTile(
+              title: Text('Quality Report 1'),
+              subtitle: Text('Description of quality report.'),
+              trailing: Icon(Icons.description, color: Colors.purple),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Quality Report 2'),
+              subtitle: Text('Description of quality report.'),
+              trailing: Icon(Icons.description, color: Colors.purple),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Quality Report 3'),
+              subtitle: Text('Description of quality report.'),
+              trailing: Icon(Icons.description, color: Colors.purple),
+            ),
+          ),
+        ],
       ),
     );
   }

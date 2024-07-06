@@ -5,14 +5,34 @@ class ToolMonitoringPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Monitoreo de Herramientas'),
-        backgroundColor: Color(0xFF6A1B9A),
+        title: Text('Tool Monitoring'),
+        backgroundColor: Color(0xFF6A1B9A), // Dark purple color
       ),
-      body: Center(
-        child: Text(
-          'Página de Monitoreo de Herramientas',
-          style: TextStyle(fontSize: 24, color: Colors.white),
-        ),
+      body: ListView(
+        padding: EdgeInsets.all(16.0),
+        children: [
+          Card(
+            child: ListTile(
+              title: Text('Tool A'),
+              subtitle: Text('Status: Operational'),
+              trailing: Icon(Icons.check_circle, color: Colors.green),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Tool B'),
+              subtitle: Text('Status: Needs Maintenance'),
+              trailing: Icon(Icons.warning, color: Colors.orange),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Tool C'),
+              subtitle: Text('Status: Out of Service'),
+              trailing: Icon(Icons.error, color: Colors.red),
+            ),
+          ),
+        ],
       ),
     );
   }

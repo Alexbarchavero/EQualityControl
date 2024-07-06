@@ -5,7 +5,7 @@ class StatisticAnalysisPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Análisis Estadístico'),
+        title: Text('Statistical Analysis'),
         backgroundColor: Color(0xFF6A1B9A),
       ),
       body: Padding(
@@ -15,46 +15,46 @@ class StatisticAnalysisPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Tasa de Defectos',
+                'Defect Rate',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
               ),
               SizedBox(height: 10),
               Row(
                 children: [
-                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Gráfica Anual', style: TextStyle(color: Colors.white))))),
+                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Annual Graph', style: TextStyle(color: Colors.white))))),
                   SizedBox(width: 10),
-                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Gráfica Mensual', style: TextStyle(color: Colors.white))))),
+                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Monthly Graph', style: TextStyle(color: Colors.white))))),
                 ],
               ),
               SizedBox(height: 20),
               Text(
-                'Tasa de Desperdicio',
+                'Waste Rate',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
               ),
               SizedBox(height: 10),
               Row(
                 children: [
-                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Gráfica Anual', style: TextStyle(color: Colors.white))))),
+                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Annual Graph', style: TextStyle(color: Colors.white))))),
                   SizedBox(width: 10),
-                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Gráfica Mensual', style: TextStyle(color: Colors.white))))),
+                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Monthly Graph', style: TextStyle(color: Colors.white))))),
                 ],
               ),
               SizedBox(height: 20),
               Text(
-                'Tiempo de Ciclo',
+                'Cycle Time',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
               ),
               SizedBox(height: 10),
               Row(
                 children: [
-                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Gráfica Anual', style: TextStyle(color: Colors.white))))),
+                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Annual Graph', style: TextStyle(color: Colors.white))))),
                   SizedBox(width: 10),
-                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Gráfica Mensual', style: TextStyle(color: Colors.white))))),
+                  Expanded(child: Container(color: Color(0xFF2C2E43), height: 150, child: Center(child: Text('Monthly Graph', style: TextStyle(color: Colors.white))))),
                 ],
               ),
               SizedBox(height: 20),
               Text(
-                'Resumen del Reporte',
+                'Report Summary',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
               ),
               SizedBox(height: 10),

@@ -10,7 +10,7 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2C2E43), // Fondo oscuro
+      backgroundColor: Color(0xFF2C2E43), // Dark background
       body: Stack(
         children: <Widget>[
           Positioned(
@@ -20,7 +20,7 @@ class SignInPage extends StatelessWidget {
               width: 180,
               height: 180,
               decoration: BoxDecoration(
-                color: Color(0xFF6A1B9A), // Color del círculo
+                color: Color(0xFF6A1B9A), // Circle color
                 shape: BoxShape.circle,
               ),
               child: Center(
@@ -34,7 +34,7 @@ class SignInPage extends StatelessWidget {
                   },
                   icon: Icon(Icons.arrow_back, color: Colors.white),
                   label: Text(
-                    'Atrás',
+                    'Back',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
@@ -56,7 +56,7 @@ class SignInPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Iniciar Sesión',
+                    'Sign In',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -65,7 +65,7 @@ class SignInPage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'Inicia sesión para continuar.',
+                    'Sign in to continue.',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -82,7 +82,7 @@ class SignInPage extends StatelessWidget {
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor ingrese su email';
+                              return 'Please enter your email';
                             }
                             return null;
                           },
@@ -94,7 +94,7 @@ class SignInPage extends StatelessWidget {
                           obscureText: true,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor ingrese su contraseña';
+                              return 'Please enter your password';
                             }
                             return null;
                           },
@@ -105,7 +105,7 @@ class SignInPage extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: () {
                               if (_formKey.currentState?.validate() == true) {
-                                // Credenciales temporales
+                                // Temporary credentials
                                 String tempEmail = 'tempuser@example.com';
                                 String tempPassword = 'temppassword';
 
@@ -117,11 +117,11 @@ class SignInPage extends StatelessWidget {
                                         builder: (context) => DashboardPage()),
                                   );
                                 } else {
-                                  // Mostrar un mensaje de error
+                                  // Show error message
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                         content: Text(
-                                            'Email o contraseña incorrectos')),
+                                            'Incorrect email or password')),
                                   );
                                 }
                               }
@@ -133,8 +133,7 @@ class SignInPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child:
-                                Text('Entrar', style: TextStyle(fontSize: 18)),
+                            child: Text('Sign In', style: TextStyle(fontSize: 18, color: Colors.white)),
                           ),
                         ),
                       ],
@@ -145,7 +144,7 @@ class SignInPage extends StatelessWidget {
                       Navigator.pushNamed(context, '/forgotPassword');
                     },
                     child: Text(
-                      '¿Olvidaste tu contraseña?',
+                      'Forgot your password?',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -154,7 +153,7 @@ class SignInPage extends StatelessWidget {
                       Navigator.pushNamed(context, '/signUp');
                     },
                     child: Text(
-                      '¡Registrate!',
+                      'Sign Up!',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

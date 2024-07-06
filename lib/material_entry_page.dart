@@ -8,17 +8,18 @@ class MaterialEntryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registro de Materiales'),
-        backgroundColor: Color(0xFF6A1B9A),
+        title: Text('Material Entry'),
+        backgroundColor: Color(0xFF6A1B9A), // Color púrpura oscuro
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          children: [
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
             TextField(
               controller: materialNameController,
               decoration: InputDecoration(
-                labelText: 'Nombre del Material',
+                labelText: 'Material Name',
                 labelStyle: TextStyle(color: Colors.white),
                 filled: true,
                 fillColor: Colors.white.withOpacity(0.1),
@@ -33,7 +34,7 @@ class MaterialEntryPage extends StatelessWidget {
             TextField(
               controller: quantityController,
               decoration: InputDecoration(
-                labelText: 'Cantidad',
+                labelText: 'Quantity',
                 labelStyle: TextStyle(color: Colors.white),
                 filled: true,
                 fillColor: Colors.white.withOpacity(0.1),
@@ -42,22 +43,22 @@ class MaterialEntryPage extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
               ),
+              keyboardType: TextInputType.number,
               style: TextStyle(color: Colors.white),
             ),
-            SizedBox(height: 30),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 15),
-                  backgroundColor: Color(0xFF6A1B9A),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Action to register the material
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                backgroundColor: Color(0xFF6A1B9A), // Color púrpura oscuro
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                child: Text('Registrar', style: TextStyle(fontSize: 18)),
               ),
+              child: Text('Register', style: TextStyle(fontSize: 18, color: Colors.white)),
             ),
           ],
         ),
@@ -65,4 +66,3 @@ class MaterialEntryPage extends StatelessWidget {
     );
   }
 }
- 
