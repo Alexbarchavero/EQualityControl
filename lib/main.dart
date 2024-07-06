@@ -9,8 +9,6 @@ import 'material_entry_page.dart';
 import 'material_details_page.dart';
 import 'tool_monitoring_page.dart';
 import 'machine_monitoring_page.dart';
-import 'real_time_alerts_page.dart';
-import 'quality_alerts_page.dart';
 import 'quality_report_page.dart';
 import 'report_details_page.dart';
 import 'forgot_password_page.dart';
@@ -40,13 +38,11 @@ class MyApp extends StatelessWidget {
         '/qualityCheck': (context) => QualityCheckPage(),
         '/statisticAnalysis': (context) => StatisticAnalysisPage(),
         '/materialEntry': (context) => MaterialEntryPage(),
-        '/materialDetails': (context) => MaterialDetailsPage(materialName: 'Material', quantity: 0, entryDate: 'Fecha'),
+        '/materialDetails': (context) => MaterialDetailsPage(materialName: 'Material', quantity: 0, entryDate: 'Date'),
         '/toolMonitoring': (context) => ToolMonitoringPage(),
         '/machineMonitoring': (context) => MachineMonitoringPage(),
-        '/realTimeAlerts': (context) => RealTimeAlertsPage(),
-        '/qualityAlerts': (context) => QualityAlertsPage(),
         '/qualityReport': (context) => QualityReportPage(),
-        '/reportDetails': (context) => ReportDetailsPage(reportName: 'Reporte', date: 'Fecha'),
+        '/reportDetails': (context) => ReportDetailsPage(reportName: 'Report', date: 'Date'),
         '/forgotPassword': (context) => ForgotPasswordPage(),
       },
     );
@@ -54,6 +50,5 @@ class MyApp extends StatelessWidget {
 }
 
 
-// No borrar lo siguiente. Datos importantes
-// tempuser@example.com
-// temppassword
+// user@gmail.com
+// 12345

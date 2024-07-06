@@ -7,7 +7,18 @@ class DashboardPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Dashboard'),
         backgroundColor: Color(0xFF6A1B9A),
+        actions: [
+          Builder(
+            builder: (context) => IconButton(
+              icon: Icon(Icons.notifications),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+            ),
+          ),
+        ],
       ),
+      endDrawer: NotificationsDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.count(
@@ -51,20 +62,6 @@ class DashboardPage extends StatelessWidget {
               },
             ),
             DashboardButton(
-              icon: Icons.notifications,
-              label: 'Real-Time Alerts',
-              onTap: () {
-                Navigator.pushNamed(context, '/realTimeAlerts');
-              },
-            ),
-            DashboardButton(
-              icon: Icons.warning,
-              label: 'Quality Alerts',
-              onTap: () {
-                Navigator.pushNamed(context, '/qualityAlerts');
-              },
-            ),
-            DashboardButton(
               icon: Icons.report,
               label: 'Quality Reports',
               onTap: () {
@@ -72,14 +69,14 @@ class DashboardPage extends StatelessWidget {
               },
             ),
             DashboardButton(
-              icon: Icons.description,
+              icon: Icons.report,
               label: 'Material Details',
               onTap: () {
                 Navigator.pushNamed(context, '/materialDetails');
               },
             ),
             DashboardButton(
-              icon: Icons.description,
+              icon: Icons.report,
               label: 'Report Details',
               onTap: () {
                 Navigator.pushNamed(context, '/reportDetails');
@@ -120,6 +117,68 @@ class DashboardButton extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class NotificationsDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.all(16.0),
+        children: [
+          ListTile(
+            title: Text('Quality Alerts', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Quality Alert 1'),
+              subtitle: Text('Description of quality alert.'),
+              trailing: Icon(Icons.warning, color: Colors.orange),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Quality Alert 2'),
+              subtitle: Text('Description of quality alert.'),
+              trailing: Icon(Icons.error, color: Colors.red),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Quality Alert 3'),
+              subtitle: Text('Description of quality alert.'),
+              trailing: Icon(Icons.info, color: Colors.blue),
+            ),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('Real-Time Alerts', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Alert 1'),
+              subtitle: Text('Description of real-time alert.'),
+              trailing: Icon(Icons.warning, color: Colors.orange),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Alert 2'),
+              subtitle: Text('Description of real-time alert.'),
+              trailing: Icon(Icons.error, color: Colors.red),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Alert 3'),
+              subtitle: Text('Description of real-time alert.'),
+              trailing: Icon(Icons.info, color: Colors.blue),
+            ),
+          ),
+        ],
       ),
     );
   }

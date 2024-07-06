@@ -106,8 +106,8 @@ class SignInPage extends StatelessWidget {
                             onPressed: () {
                               if (_formKey.currentState?.validate() == true) {
                                 // Temporary credentials
-                                String tempEmail = 'tempuser@example.com';
-                                String tempPassword = 'temppassword';
+                                String tempEmail = 'user@gmail.com';
+                                String tempPassword = '12345';
 
                                 if (emailController.text == tempEmail &&
                                     passwordController.text == tempPassword) {
